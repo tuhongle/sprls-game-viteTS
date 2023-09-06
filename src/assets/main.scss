@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+$font-family-base: 'Barlow Semi Condensed', sans-serif;
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+
+main {
+    background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+    width: 100vw;
+    height: 100vh;
+
+    div {
+        &.content {
+            position: relative;
+        }
+
+        button.btn {
+            position: absolute;
+            border-style: solid;
+            border-radius: 50%;
+            border-width: 30px;
+            width: 150px;
+            aspect-ratio: 1 / 1;
+
+            &.active {
+                box-shadow: 0 0 30px $success;
+            }
+            
+            &.paper {
+                border-color: $primary;
+                &.triangle {
+                    top: 0px;
+                    left: 0px;
+                    transform: translate(-25%, -25%);
+                }
+                &.pentagon {
+                    top: 0;
+                    left: 50%;
+                    transform: translate(50%, 30%);
+                }
+            }
+
+            &.scissors {
+                border-color: $warning;
+                &.triangle {
+                    top: 0px;
+                    right: 0px;
+                    transform: translate(25%, -25%);
+                }
+                &.pentagon {
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -25%);
+                }
+            }
+
+            &.rock {
+                border-color: $danger;
+                &.triangle {
+                    bottom: 0px;
+                    left: 50%;
+                    transform: translate(-50%, 25%);
+                }
+                &.pentagon {
+                    bottom: 0;
+                    right: 0;
+                    transform: translate(5%, 40%);
+                }
+            }
+
+            &.lizard {
+                border-color: $success;
+                &.pentagon {
+                    bottom: 0;
+                    left: 0;
+                    transform: translate(-5%, 40%);
+                }
+            }
+
+            &.spock {
+                border-color: $info;
+                &.pentagon {
+                    top: 0;
+                    left: -50%;
+                    transform: translate(50%, 30%);
+                }
+            }
+        }
+
+        a.btn {
+            &:hover {
+                color: $danger !important;
+                background-color: $light !important;
+            }
+        }
+    }
+}
